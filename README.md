@@ -1,6 +1,7 @@
-Install tcwebcommon to local repository.
+## Initialise submodules.
 ```
-mvn install:install-file -Dfile=lib/shared/tcwebcommon.jar -DgroupId=tc-components -DartifactId=tcwebcommon -Dversion=1.0.0 -Dpackaging=jar
+cd tc-online-review
+git submodule update --init
 ```
 
 Install shared to local repository.
@@ -11,11 +12,6 @@ mvn install:install-file -Dfile=lib/shared/shared.jar -DgroupId=tc-components -D
 Install catalog to local repository.
 ```
 mvn install:install-file -Dfile=lib/shared/catalog.jar -DgroupId=tc-components -DartifactId=catalog -Dversion=1.0.0 -Dpackaging=jar
-```
-
-Install forums to local repository.
-```
-mvn install:install-file -Dfile=lib/shared/forums.jar -DgroupId=tc-components -DartifactId=forums -Dversion=1.0.0 -Dpackaging=jar
 ```
 
 Install security to local repository.
@@ -31,6 +27,11 @@ mvn install:install-file -Dfile=lib/tcs/user_ejb/User.jar -DgroupId=tc-component
 Install id_generator to local repository.
 ```
 mvn install:install-file -Dfile=lib/tcs/id_generator/3.0.2/id_generator.jar -DgroupId=tc-components -DartifactId=id_generator -Dversion=3.0.2 -Dpackaging=jar
+```
+
+Install tc_id_generator to local repository.
+```
+mvn install:install-file -Dfile=lib/tcs/tc_id_generator.jar -DgroupId=tc-components -DartifactId=tc_id_generator -Dversion=1.0.0 -Dpackaging=jar
 ```
 
 Install jivebase to local repository.

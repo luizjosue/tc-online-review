@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>tc-components</groupId>
@@ -13,6 +12,7 @@
         <struts.version>2.5.13</struts.version>
         <jackson.version>2.1.5</jackson.version>
         <poi.version>3.9</poi.version>
+        <selenium.version>2.37.0</selenium.version>
     </properties>
     <dependencies>
         <dependency>
@@ -87,6 +87,16 @@
         </dependency>
         <dependency>
             <groupId>tc-components</groupId>
+            <artifactId>project_phase_template</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tc-components</groupId>
+            <artifactId>online_review_upload_services</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>tc-components</groupId>
             <artifactId>deliverable_management</artifactId>
             <version>1.2.4</version>
         </dependency>
@@ -157,8 +167,18 @@
         </dependency>
         <dependency>
             <groupId>tc-components</groupId>
+            <artifactId>online_review_deliverables</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.topcoder.internal</groupId>
             <artifactId>tcwebcommon</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.topcoder.internal</groupId>
+            <artifactId>core.api</artifactId>
+            <version>4.3.0</version>
         </dependency>
         <dependency>
             <groupId>tc-components</groupId>
@@ -181,7 +201,7 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>tc-components</groupId>
+            <groupId>com.topcoder.internal</groupId>
             <artifactId>forums</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -189,6 +209,11 @@
             <groupId>tc-components</groupId>
             <artifactId>id_generator</artifactId>
             <version>3.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>tc-components</groupId>
+            <artifactId>tc_id_generator</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>tc-components</groupId>
@@ -283,7 +308,41 @@
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
         </dependency>
+        <!-- aws -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+        <!-- selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <!-- svnkit -->
+        <dependency>
+            <groupId>org.tmatesoft.svnkit</groupId>
+            <artifactId>svnkit</artifactId>
+            <version>1.8.2</version>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <repositories>
         <repository>
             <id>central</id>
