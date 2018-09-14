@@ -2,3 +2,4 @@ build
 build.properties
 token.properties
 .DS_Store
+/.settings/

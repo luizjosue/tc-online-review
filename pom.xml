@@ -341,6 +341,25 @@
                     <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
+            <plugin>
+		<groupId>org.codehaus.mojo</groupId>
+		<artifactId>properties-maven-plugin</artifactId>
+		<version>1.0-alpha-1</version>
+		<executions>
+		  <execution>
+		    <phase>initialize</phase>
+		    <goals>
+		      <goal>read-project-properties</goal>
+		    </goals>
+		    <configuration>
+		      <files>
+		        <file>${basedir}/build.properties</file>
+			<file>${basedir}/token.properties</file>
+		      </files>
+		    </configuration>
+		  </execution>
+		</executions>
+	      </plugin>
         </plugins>
     </build>
     <repositories>
@@ -353,8 +372,8 @@
             </snapshots>
         </repository>
         <repository>
-            <id>local_</id>
-            <url>file:/home/u14/.m2/repository</url>
+            <id>luiz</id>
+            <url>https://raw.githubusercontent.com/luizjosue/myrepo/repository</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>

@@ -16,12 +16,12 @@ mvn install:install-file -Dfile=lib/shared/catalog.jar -DgroupId=tc-components -
 
 Install security to local repository.
 ```
-mvn install:install-file -Dfile=lib/tcs/security_ejb/security.jar -DgroupId=tc-components -DartifactId=security -Dversion=1.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile=lib/tcs/security_ejb/Security.jar -DgroupId=tc-components -DartifactId=security -Dversion=1.0.0 -Dpackaging=jar
 ```
 
 Install User to local repository.
 ```
-mvn install:install-file -Dfile=lib/tcs/user_ejb/User.jar -DgroupId=tc-components -DartifactId=user -Dversion=1.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile=lib/tcs/user_ejb/User.jar -DgroupId=tc-components -DartifactId=User -Dversion=1.0.0 -Dpackaging=jar
 ```
 
 Install id_generator to local repository.
