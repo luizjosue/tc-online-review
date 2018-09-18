@@ -308,6 +308,12 @@
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
         </dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
+	<dependency>
+	    <groupId>org.apache.velocity</groupId>
+	    <artifactId>velocity</artifactId>
+	    <version>1.7</version>
+	</dependency>
         <!-- aws -->
         <dependency>
             <groupId>com.amazonaws</groupId>
@@ -333,6 +339,7 @@
         </dependency>
     </dependencies>
     <build>
+	<finalName>${project.artifactId}.war</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
